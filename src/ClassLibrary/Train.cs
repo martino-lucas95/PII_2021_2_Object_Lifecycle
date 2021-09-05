@@ -13,16 +13,18 @@ namespace ClassLibrary
     /// </summary>
     public class Train
     {
-        private static int count = 0;
-        string trainId;
-        public string trainId {get; set;}
-        public int count{get; set;}
-
-        public Train (int count, string trainId)
+        private static int count;
+        string trainId {get; set;}
+        int count{get; set;}
+        public Train()
         {
-            this.count = count;
-            this.TrainId = trainId;
+            count++;
         }
+        ~Train ()
+        {
+            count--;
+        }
+
 
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
